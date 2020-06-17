@@ -61,4 +61,12 @@ public class UsersService {
 		return users;
 	}
 	
+	public Page<User> searchUsersByNameAndSurnameNoAdminsAndUserSession(Pageable pageable, String searchText, String username) {
+		Page<User> users = new PageImpl<User>(new LinkedList<User>());
+		searchText= "%"+searchText+"%";
+		
+		users = usersRepository.searchByNameAndSurnameNoAdminsAndUserSession(pageable, searchText, username);
+		return users;
+	}
+	
 }

@@ -24,7 +24,8 @@
 				$("#tableUsers").load('/user/list/update');
 			});
 		</script>
-
+		<!--  <span class="text-danger" th:if="${mensaje== true}" th:text="#{no.invitar}"/> -->
+		<span class="text-danger" th:if="${param.x}" th:text="#{no.invitar}"/>
 		<div class="table-responsive">
 			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
 				<thead>

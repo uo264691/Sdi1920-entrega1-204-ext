@@ -44,6 +44,31 @@ public class FriendsService {
 		return users;
 	}
 	
+	public boolean requestPossible(String user1username, Long user2id) {
+		User solicita = getUser(user1username);
+		User recibe = getUser(user2id);
+		boolean respuesta=true;
+		
+		if(solicita== recibe) respuesta = false; 
+		
+		ArrayList<User> users= friendsRepository.findFriendsOf2(solicita);
+		for (User user : users) {
+			if(user.getUsername() == recibe.getUsername())
+				respuesta=false;
+		}
+		users = friendsRepository.findFriendRequestsOf2(solicita);
+		for (User user : users) {
+			if(user.getUsername() == recibe.getUsername())
+				respuesta=false;
+		}
+		users = friendsRepository.findFriendRequestsOf2(recibe);
+		for (User user : users) {
+			if(user.getUsername() == solicita.getUsername())
+				respuesta=false;
+		}
+		return respuesta;
+	}
+	
 	private User getUser(String username) {
 		return usersRepository.findByUsername(username);
 	}

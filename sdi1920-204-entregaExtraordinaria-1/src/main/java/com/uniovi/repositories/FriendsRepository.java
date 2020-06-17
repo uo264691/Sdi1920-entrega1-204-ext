@@ -1,5 +1,6 @@
 package com.uniovi.repositories;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.transaction.Transactional;
@@ -24,6 +25,12 @@ public interface FriendsRepository extends CrudRepository<Friendship, Long>
 	
 	@Query("select f.user2 from Friendship f where f.user1 = ?1 and f.isRequest=TRUE")
 	Page<User> findFriendRequestsOf(Pageable pageable, User user1);
+	
+	@Query("select f.user2 from Friendship f where f.user1 = ?1 and f.isRequest=TRUE")
+	ArrayList<User> findFriendRequestsOf2(User user1);
+	
+	@Query("select f.user2 from Friendship f where f.user1 = ?1 and f.isRequest=FALSE")
+	ArrayList<User> findFriendsOf2( User user1);
 	
 	@Query("select f from Friendship f where f.user1 = ?1 and f.user2 = ?2")
 	Set<Friendship> findByUser1andUser2(User user1, User user2);

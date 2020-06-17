@@ -37,6 +37,9 @@ public class FriendsController {
 	
 	@RequestMapping(value = "/friend/add/{id}")
 	public String getAdd(Model model, Principal principal, @PathVariable Long id) {
+		if(!friendsService.requestPossible(principal.getName(), id)) {
+			return "redirect:/user/list?x=1";
+		}
 		friendsService.addFriend(principal.getName(), id);
 		return "redirect:/request/list";
 	}

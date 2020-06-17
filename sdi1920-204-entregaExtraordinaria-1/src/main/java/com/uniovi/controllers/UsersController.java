@@ -83,7 +83,7 @@ public class UsersController {
 		if(result.hasErrors()) {
 			return "login";
 		}
-		
+		securityService.autoLogin(user.getUsername(), user.getPassword());
 		return "redirect:home";
 	}
 	
@@ -91,7 +91,11 @@ public class UsersController {
 	public String getListado(Model model, Pageable pageable, @RequestParam(value = "", required = false) String searchText) {
 		if(searchText==null)
 			searchText="";
-		Page<User> users = usersService.searchUsersByNameAndSurname(pageable, searchText);
+		
+		Authentication auth =SecurityContextHolder.getContext().getAuthentication();
+		String email =auth.getName();
+		//System.out.println("Email -->"+email);
+		Page<User> users = usersService.searchUsersByNameAndSurnameNoAdminsAndUserSession(pageable, searchText, email);
 		
 		model.addAttribute("userList", users.getContent());
 		model.addAttribute("page", users);
