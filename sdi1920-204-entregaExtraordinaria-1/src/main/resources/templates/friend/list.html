@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+<body>
+	<!--Barra de Navegación superior -->
+	<nav th:replace="fragments/nav" />
+	<div class="container">
+
+		<h2 th:text="#{friend.list.header}"></h2>
+
+		<p th:text="#{friend.list.subheader}"></p>
+
+		<div class="table-responsive">
+			<table id="tableUsers" class="table table-hover"
+				th:fragment="tableUsers">
+				<thead>
+					<tr>
+						<th th:text="#{common.username}"></th>
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th class="col-md-1"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}">
+						<td th:text="${user.username}"></td>
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td><a  th:text="#{common.delete}" th:href="${'/friend/delete/' + user.id}"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div th:replace="fragments/pagination" />
+	</div>
+	<footer th:replace="fragments/footer" />
+</body>
+</html>

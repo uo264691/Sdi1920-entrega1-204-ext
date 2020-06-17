@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+
+<body>
+	<nav th:replace="fragments/nav" />
+
+
+
+	<div class="container">
+		<h2 th:text="#{users.details.heading}"></h2>
+		<div class="panel panel-default">
+			<div class="panel-heading"  th:text="#{common.username}"></div>
+			<div class="panel-body" th:text="${user.username}"></div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"  th:text="#{common.name}"></div>
+			<div class="panel-body" th:text="${user.name}"></div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"  th:text="#{common.surname}"></div>
+			<div class="panel-body" th:text="${user.lastName}"></div>
+		</div>
+	</div>
+
+	<footer th:replace="fragments/footer" />
+</body>
+</html>
