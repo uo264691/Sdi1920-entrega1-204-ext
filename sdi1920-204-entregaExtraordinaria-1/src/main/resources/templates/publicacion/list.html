@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+<body>
+	<!--Barra de Navegación superior -->
+	<nav th:replace="fragments/nav" />
+	<div class="container">
+
+		<h2 th:text="#{publicacion.list.header}"></h2>
+
+
+		<div class="table-responsive">
+			<table id="tableUsers" class="table table-hover"
+				th:fragment="tableUsers">
+				<thead>
+					<tr>
+						<th th:text="#{common.title}"></th>
+						<th th:text="#{common.text}"></th>
+						<th class="col-md-1"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="publicacion: ${publicacionList}">
+						<td><b th:text="${publicacion.title}"></b></td>
+						<td th:text="${publicacion.text}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+	<footer th:replace="fragments/footer" />
+</body>
+</html>

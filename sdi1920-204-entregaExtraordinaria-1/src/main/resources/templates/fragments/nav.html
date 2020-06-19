@@ -11,6 +11,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
+				<li><a href="/test/reiniciar" th:text="ReiniciarTest" sec:authorize="hasRole('ROLE_ADMIN')"></a></li>
 				<li><a href="/" th:text="#{home}"></a></li>
 				<li id="users-menu" class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -30,10 +31,18 @@
 						<li><a href="/friend/list" th:text="#{friend.list}"></a></li>
 						<li><a href="/request/list" th:text="#{request.list}"></a></li>
 					</ul></li>
+				<li id="publicacion-menu" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+					th:text="#{publicacion.dropdown}"><span class="caret"> </span>
+				</a>
+					<ul class="dropdown-menu">
+						<li><a href="/publicacion/list" th:text="#{publicacion.list}"></a></li>
+						<li><a href="/publicacion/add" th:text="#{publicacion.add}"></a></li>
+					</ul></li>
 
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown"><a id="btnLanguage" href="#"
+				<li id="btnLanguage" class="dropdown"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown" role="button"
 					aria-haspopup="true" aria-expanded="false"> <span
 						th:text="#{language.change}"> </span> <span class="caret">

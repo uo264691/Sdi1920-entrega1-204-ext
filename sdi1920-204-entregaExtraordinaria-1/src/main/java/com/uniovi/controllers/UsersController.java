@@ -96,7 +96,12 @@ public class UsersController {
 		String email =auth.getName();
 		//System.out.println("Email -->"+email);
 		Page<User> users = usersService.searchUsersByNameAndSurnameNoAdminsAndUserSession(pageable, searchText, email);
-		
+		//System.out.println(usersService.getUserByUsername(email).getRole());
+		if(usersService.getUserByUsername(email).getRole().equals("ROLE_ADMIN")) {
+			//System.out.println(usersService.getUserByUsername(email).getRole());
+			users = usersService.getUsers(pageable);
+		}
+			
 		model.addAttribute("userList", users.getContent());
 		model.addAttribute("page", users);
 		return "user/list";
