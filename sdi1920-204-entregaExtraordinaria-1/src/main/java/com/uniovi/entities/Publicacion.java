@@ -1,5 +1,7 @@
 package com.uniovi.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +15,7 @@ public class Publicacion {
 	private String title;
 	private String text;
 	private String username;
+	private Date date;
 	
 	
 	public Publicacion() {}
@@ -45,6 +48,12 @@ public class Publicacion {
 	}
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 	

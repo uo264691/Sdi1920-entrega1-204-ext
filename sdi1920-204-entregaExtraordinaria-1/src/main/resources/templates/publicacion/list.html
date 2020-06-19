@@ -14,6 +14,7 @@
 				th:fragment="tableUsers">
 				<thead>
 					<tr>
+						<th th:text="#{common.date}"></th>
 						<th th:text="#{common.title}"></th>
 						<th th:text="#{common.text}"></th>
 						<th class="col-md-1"></th>
@@ -21,6 +22,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="publicacion: ${publicacionList}">
+						<td th:text="${publicacion.getDate()}"></td>
 						<td><b th:text="${publicacion.title}"></b></td>
 						<td th:text="${publicacion.text}"></td>
 					</tr>

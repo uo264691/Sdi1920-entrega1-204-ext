@@ -1,5 +1,6 @@
 package com.uniovi.services;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.PostConstruct;
@@ -56,7 +57,10 @@ public class InsertSampleDataService {
 		friendsService.addFriend(userp1, userp3);
 		friendsService.addFriendRequest(userp4, userp1);
 		
-		publicacionService.addPublicacion(new Publicacion("Publicacion preestableciada", "esta es mi publicacion", "luis@gmail.com"));
+		Publicacion p =new Publicacion("Publicacion preestableciada", "esta es mi publicacion", "luis@gmail.com");
+		p.setDate(new Date());
+		
+		publicacionService.addPublicacion(p);
 		//publicacionService.addPublicacion(new Publicacion("Publicacion preestableciada", "esta es mi publicacion", ""));
 		
 	}

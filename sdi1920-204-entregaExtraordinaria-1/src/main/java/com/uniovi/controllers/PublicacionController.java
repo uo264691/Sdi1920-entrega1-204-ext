@@ -2,6 +2,7 @@ package com.uniovi.controllers;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 
 import org.springframework.beans.factory.annotation.*;
@@ -58,6 +59,7 @@ public class PublicacionController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		publicacion.setUsername(username);
+		publicacion.setDate(new Date());
 		publicacionService.addPublicacion(publicacion);
 		
 		return "redirect:list";
