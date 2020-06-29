@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head" />
+<body>
+	<!--Barra de Navegación superior -->
+	<nav th:replace="fragments/nav" />
+	<div class="container">
+
+		
+		<!--  <span class="text-danger" th:if="${mensaje== true}" th:text="#{no.invitar}"/> -->
+		
+		<div class="table-responsive">
+		<b>Asturias</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Asturias'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Madrid</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Madrid'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Andalucía</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Andalucía'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Aragón</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Aragón'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Murcia</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Murcia'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Galicia</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Galicia'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Cantabria</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Cantabria'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>País Vasco</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'País Vasco'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Navarra</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Navarra'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Cataluña</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Cataluña'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Castilla y León</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Castilla y León'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Castilla La Mancha</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Castilla La Mancha'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Comunidad Valenciana</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Comunidad Valenciana'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Extremadura</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Extremadura'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Baleares</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Baleares'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+		<b>Canarias</b>
+			<table id="tableUsers" class="table table-hover" th:fragment="tableUsers">
+				<thead>
+					<tr>
+						
+						<th th:text="#{common.name}"></th>
+						<th th:text="#{common.surname}"></th>
+						<th th:text="Dirección"></th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${userList}" th:if="${user.comunidad} == 'Canarias'">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.direccion}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		
+	</div>
+	<footer th:replace="fragments/footer" />
+</body>
+</html>

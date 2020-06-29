@@ -1,7 +1,9 @@
 package com.uniovi.controllers;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.data.domain.Page;
@@ -105,6 +107,16 @@ public class UsersController {
 		model.addAttribute("userList", users.getContent());
 		model.addAttribute("page", users);
 		return "user/list";
+	}
+	@RequestMapping("/comunidades/list")
+	public String getListadoComunidades(Model model) {
+		//System.out.println("Email -->"+email);
+		List<User> users = usersService.getUsers();
+		//System.out.println(usersService.getUserByUsername(email).getRole());
+			
+		model.addAttribute("userList", users);
+
+		return "comunidades/list";
 	}
 	
 	@RequestMapping("/user/list/update")

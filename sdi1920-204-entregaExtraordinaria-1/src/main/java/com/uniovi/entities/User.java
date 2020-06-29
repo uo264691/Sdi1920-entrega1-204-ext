@@ -15,6 +15,8 @@ public class User {
 	private String name;
 	private String lastName;
 	private String role;
+	private String direccion;
+	private String comunidad;
 	
 	@OneToMany( mappedBy="user1" )
 	private Set<Friendship> friends = new HashSet<>();
@@ -41,6 +43,23 @@ public class User {
 	private String password;
 	@Transient // propiedad que no se almacena e la tabla.
 	private String passwordConfirm;
+
+	
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getComunidad() {
+		return comunidad;
+	}
+
+	public void setComunidad(String comunidad) {
+		this.comunidad = comunidad;
+	}
 
 	public String getPassword() {
 		return password;

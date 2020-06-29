@@ -8,7 +8,7 @@
 		<h2 th:text="#{signup.heading}"></h2>
 		<form class="form-horizontal" method="post" action="/signup"
 			th:object="${user}">
-			
+
 			<!-- <div class="form-group">
 				<label class="control-label col-sm-2" for=”role” th:text="#{common.role}"></label>
 				<div class="col-sm-10">
@@ -18,36 +18,37 @@
 					</select>
 				</div>
 			</div> -->
-			
+
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="username" th:text="#{common.username}"></label>
+				<label class="control-label col-sm-2" for="username"
+					th:text="#{common.username}"></label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="username"
-						placeholder=""  /> <span
-						class="text-danger" th:if="${#fields.hasErrors('username')}"
-						th:errors="*{username}" />
+						placeholder="" /> <span class="text-danger"
+						th:if="${#fields.hasErrors('username')}" th:errors="*{username}" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="name" th:text="#{common.name}"></label>
+				<label class="control-label col-sm-2" for="name"
+					th:text="#{common.name}"></label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" name="name"
-						placeholder=""  /> <span
-						class="text-danger" th:if="${#fields.hasErrors('name')}"
+					<input type="text" class="form-control" name="name" placeholder="" />
+					<span class="text-danger" th:if="${#fields.hasErrors('name')}"
 						th:errors="*{name}" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="lastName" th:text="#{common.surname}"></label>
+				<label class="control-label col-sm-2" for="lastName"
+					th:text="#{common.surname}"></label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="lastName"
-						placeholder=""  /> <span
-						class="text-danger" th:if="${#fields.hasErrors('lastName')}"
-						th:errors="*{lastName}" />
+						placeholder="" /> <span class="text-danger"
+						th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="password" th:text="#{common.password}"></label>
+				<label class="control-label col-sm-2" for="password"
+					th:text="#{common.password}"></label>
 				<div class="col-sm-10">
 					<input type="password" class="form-control" name="password"
 						placeholder="" /> <span class="text-danger"
@@ -55,13 +56,47 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="passwordConfirm" th:text="#{signup.confirmpassword}"></label>
+				<label class="control-label col-sm-2" for="passwordConfirm"
+					th:text="#{signup.confirmpassword}"></label>
 				<div class="col-sm-10">
 					<input type="password" class="form-control" name="passwordConfirm"
 						placeholder="" /> <span class="text-danger"
 						th:if="${#fields.hasErrors('passwordConfirm')}"
 						th:errors="*{passwordConfirm}" />
 				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2" id="direccion" for="direccion">
+					Direccion:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="direccion"
+						placeholder="direccion" /><span class="text-danger"
+						th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" id="comunidad" for="comunidad">
+					Comunidad:</label> <select name="comunidad">
+					<option value="Asturias">Asturias</option>
+					<option value="Madrid">Madrid</option>
+					<option value="Andalucía">Andalucía</option>
+					<option value="Aragón">Aragón</option>
+					<option value="Murcia">Murcia</option>
+					<option value="Galicia">Galicia</option>
+					<option value="Cantabria">Cantabria</option>
+					<option value="País Vasco">País Vasco</option>
+					<option value="Navarra">Navarra</option>
+					<option value="Cataluña">Cataluña</option>
+					<option value="Castilla y León">Castilla y León</option>
+					<option value="Castilla La Mancha">Castilla La Mancha</option>
+					<option value="Comunidad Valenciana">Comunidad Valenciana</option>
+					<option value="Extremadura">Extremadura</option>
+					<option value="Baleares">Baleares</option>
+					<option value="Canarias">Canarias</option>
+
+				</select>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">

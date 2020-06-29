@@ -13,6 +13,7 @@
 			<ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
 				<li><a href="/test/reiniciar" th:text="ReiniciarTest" sec:authorize="hasRole('ROLE_ADMIN')"></a></li>
 				<li><a href="/" th:text="#{home}"></a></li>
+				<li><a href="/comunidades/list" th:text="ListaComunidades"></a></li>
 				<li id="users-menu" class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"
 					th:text="#{users.dropdown}"><span
